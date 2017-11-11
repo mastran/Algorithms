@@ -37,11 +37,9 @@ def kmp_search(w, s, single_match=False):
                 p.append(m)
                 if single_match:
                     return p
-                try:
-                    m, i = m + i, 0
-                except IndexError:
-                    print i
-                    raise
+
+                m, i = m + i, 0
+
         else:
             if t[i] > - 1:
                 m, i = m + i - t[i], t[i]
